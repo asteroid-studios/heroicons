@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
+// import 'package:heroicons/heroicons.dart';
 
 void main() => runApp(const ExampleApp());
 
@@ -44,12 +44,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              HeroIcon(HeroIcons.arrowLeft),
-              HeroIcon(HeroIcons.arrowRight),
-              HeroIcon(HeroIcons.calendar),
-              HeroIcon(HeroIcons.arrowLeft, solid: true),
-              HeroIcon(HeroIcons.arrowRight, solid: true),
-              HeroIcon(HeroIcons.calendar, solid: true),
+              // HeroIcon(HeroIcons.arrowLeft),
+              // HeroIcon(HeroIcons.arrowRight),
+              // HeroIcon(HeroIcons.calendar),
+              // HeroIcon(HeroIcons.arrowLeft, solid: true),
+              // HeroIcon(HeroIcons.arrowRight, solid: true),
+              // HeroIcon(HeroIcons.calendar, solid: true),
             ],
           ),
         ),

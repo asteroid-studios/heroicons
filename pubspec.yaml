@@ -1,7 +1,8 @@
 name: heroicons
 description: HeroIcons set of SVG icons in your Flutter app. Both outlined & solid icon version are available.
 version: 0.2.1
-homepage: https://github.com/vaetas/heroicons
+publish_to: 'none'
+homepage: 
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.22.0
-  path: ^1.8.0
+  flutter_jolt_ui:
+    path: ../jolt_ui
 
 dev_dependencies:
   code_builder: ^4.0.0

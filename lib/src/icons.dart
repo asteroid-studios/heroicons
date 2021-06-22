@@ -1,7 +1,9 @@
 library heroicons;
 
-class HeroIcons {
-  const HeroIcons._(this.name);
+import 'package:flutter_jolt_ui/widgets/icons/jolt_icon.dart';
+
+class HeroIcons extends JoltIconData {
+  const HeroIcons._(this.name) : super(name);
 
   final String name;
 

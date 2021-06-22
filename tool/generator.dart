@@ -1,6 +1,6 @@
 // @dart=2.9
 import 'dart:io';
-
+import 'package:built_collection/built_collection.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
 import 'package:path/path.dart' as p;
@@ -13,6 +13,7 @@ Future<void> main() async {
   final iconClass = Class(
     (b) => b
       ..name = 'HeroIcons'
+      ..extend = refer('JoltIconData')
       ..fields.addAll(
         [
           Field((b) {
@@ -35,6 +36,7 @@ Future<void> main() async {
       ..constructors.add(
         Constructor((b) {
           b.name = '_';
+          b.initializers = ListBuilder<Code>([Code('super(name)')]);
           b.constant = true;
           b.requiredParameters.add(Parameter((b) {
             b.name = 'name';
@@ -50,7 +52,9 @@ Future<void> main() async {
 
   final emitter = DartEmitter();
   final x = lib.accept(emitter);
-  await file.writeAsString(DartFormatter().format('library heroicons; $x'));
+  await file.writeAsString(DartFormatter().format('library heroicons;' +
+      'import \'package:flutter_jolt_ui/widgets/icons/jolt_icon.dart\';' +
+      '$x'));
 }
 
 List<String> _getFileNames() {
