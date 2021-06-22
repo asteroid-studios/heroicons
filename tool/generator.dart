@@ -20,12 +20,16 @@ Future<void> main() async {
             b.name = 'name';
             b.type = Reference("final String");
           }),
+          Field((b) {
+            b.name = 'family';
+            b.type = Reference("final String");
+          }),
           ...names.map((fileName) {
             return Field((b) {
               final name = p.basenameWithoutExtension(fileName);
               final recase = ReCase(name);
               b.name = recase.camelCase;
-              b.assignment = Code("HeroIcons._('$name')");
+              b.assignment = Code("HeroIcons._('$name','heroicons')");
               b.modifier = FieldModifier.constant;
               b.static = true;
               b.docs.add('/// ${recase.titleCase} icon');
@@ -36,10 +40,14 @@ Future<void> main() async {
       ..constructors.add(
         Constructor((b) {
           b.name = '_';
-          b.initializers = ListBuilder<Code>([Code('super(name)')]);
+          b.initializers = ListBuilder<Code>([Code('super(name,family)')]);
           b.constant = true;
           b.requiredParameters.add(Parameter((b) {
             b.name = 'name';
+            b.toThis = true;
+          }));
+          b.requiredParameters.add(Parameter((b) {
+            b.name = 'family';
             b.toThis = true;
           }));
         }),
