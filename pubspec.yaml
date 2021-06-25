@@ -11,10 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_jolt_ui:
-    path: ../jolt_ui
 
 dev_dependencies:
+  flutter_jolt_ui:
+    path: ../jolt_ui
+  flutter_jolt_icon_generator:
+    path: ../jolt_icon_generator
   code_builder: ^4.0.0
   dart_style: ^2.0.1
   recase: ^4.0.0
@@ -24,3 +26,4 @@ flutter:
     - assets/
     - assets/outline/
     - assets/solid/
+    - assets/color/
